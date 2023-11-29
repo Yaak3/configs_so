@@ -1,0 +1,14 @@
+[Unit]
+Description=Servico de descobrimento de GRID
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=mpi
+ExecStart=/usr/bin/python3 /mirror/service_discovery_grid.py
+
+[Install]
+WantedBy=multi-user.target
+

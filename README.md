@@ -1,6 +1,6 @@
 # Processo de instalação para uso do projeto
 
-### Configuração de rede no roteador
+### Configuração de rede no roteador ou no seu Hypervisor
 
 Criar uma rede local com a mascara 192.168.0.1/24
 
@@ -17,7 +17,7 @@ Instalar os seguintes pacotes no host master:
  - apt-get install -y openssh-server
  - apt-get install -y build-essential
  - apt-get install -y mpich
- - apt-get install apache2
+ - apt-get install -y apache2
 
 Criar um usuário chamado mpi:
  - adduser --home /mirror --uid 1100 --disabled-password --gecos "" mpi
@@ -64,6 +64,7 @@ No host master, executar o seguinte comando
  - para descobrir se o host for descoberto, é só escrever o comando "cat machinefile" e conferir se o IP está la
  - python3 gird_managerv2.py --numprocs NUMERO_DE_PROCESSOS --exec APLICAÇÃO_MPI (disponibilizamos o matrix_multiplication no repositorio)
  - Existem outras opções no grid_managerv2.py, você pode consultar passando o comando --help
+
 Para compilar uma nova aplicação MPI, você pode usar um código em C que foi escrito com base no MPI e compilar com o seguinte comando
  - mpicc CODIGO.c NOME_ARQUIVO_DESTINO (não precisa de .c no final do arquivo de destino)
 
